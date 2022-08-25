@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+*{margin:0;
+  padding:0;
+  box-sizing: content-box;
+font-family: 'League Spartan', sans-serif;
+font-size: 16px;
+}
+:root{
+--background_color_for_ratebox:hsl(300, 24%, 96%);
+--background_color_for_reviewbox_and_text_color_for_rating_and_intro_heading: hsl(300, 43%, 22%);
+--border_radius_for_boxes:10px;
+--color_for_intro_text:hsl(303, 10%, 53%);
+--color_for_name_and_reviews:hsl(300, 24%, 96%);
+--color_for_verified_buyer: hsl(333, 80%, 67%);
+--font_size_for_everthing_other_than_heading:1rem;
+--font_size_for_intro_heading:2.5rem;
+--font_weight_for_intro_heading_and_rate_text:700;
+--font_weight_for_name_and_intro_text:500;
+--font_weight_for_others:400;
+}
+body{
+background:url("images/bg-pattern-bottom-mobile.svg") bottom right no-repeat, url("images/bg-pattern-top-mobile.svg") top left no-repeat;
+}
+.mainbox{
+display:grid;
+justify-content: center;
+grid-gap: 40px;
+grid-template-rows: 200px 260px 750px;
+}
+
+.intro_gridbox{
+width:300px;
+margin-left: 20px;
+margin-top: 30px;
+
+}
+.intro_heading{
+  font-weight: var(--font_weight_for_intro_heading_and_rate_text);
+  font-size: var(--font_size_for_intro_heading);
+  color:var(--background_color_for_reviewbox_and_text_color_for_rating_and_intro_heading);
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.intro_text{
+  text-align: center;
+  color:var(--color_for_intro_text);
+  font-weight: var(--font_weight_for_name_and_intro_text);
+  font-size:var(--font_size_for_everthing_other_than_heading);
+}
+.rate_gridbox{
+display:grid;
+grid-template-rows: 40px 40px 40px;
+grid-gap: 50px;
+justify-content: center;
+
+}
+.ratebox{
+background-color: var(--background_color_for_ratebox);
+border-radius: var(--border_radius_for_boxes);
+color:var(--background_color_for_reviewbox_and_text_color_for_rating_and_intro_heading);
+text-align: center;
+padding:10px 0;
+font-weight: 500;
+height:50px;
+width:320px;
+font-weight: var(--font_weight_for_intro_heading_and_rate_text);
+}
+
+
+
+.review_gridbox{
+  display:grid;
+  height:700px;
+  grid-gap: 20px;
+  grid-template-rows: 250px 250px 250px;
+
+}
+.reviewbox{
+padding:20px;
+background-color: var(--background_color_for_reviewbox_and_text_color_for_rating_and_intro_heading);
+height:200px;
+width:290px;
+border-radius:var(--border_radius_for_boxes);
+}
+.profpic{
+border-radius:100px;
+float:left;
+width: 40px;
+height:40px;
+margin-right: 20px;
+}
+.name{
+font-weight: var(--font_weight_for_name_and_intro_text);
+color:var(--color_for_name_and_reviews);
+font-size: var(--font_size_for_everthing_other_than_heading);
+}
+.verified{
+font-weight: var(--font_weight_for_others);
+color:var(--color_for_verified_buyer);
+font-size: var(--font_size_for_everthing_other_than_heading);
+}
+
+.review{
+font-weight: var(--font_weight_for_others);
+color:var(--color_for_name_and_reviews);
+font-size: var(--font_size_for_everthing_other_than_heading);
+margin-top: 20px;
+line-height: 20px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1440px){
+body{
+background:url("images/bg-pattern-bottom-desktop.svg") bottom right no-repeat, url("images/bg-pattern-top-desktop.svg") top left no-repeat;
+height: 100vh;
+}
+.mainbox{
+grid-template-areas: "intr .   revi revi revi "
+                    
+                     "rate rate rate rate rate";
+
+margin-top: 100px;   
+grid-gap: 80px;    
+}
+
+.intro_gridbox{
+  grid-area: intr;
+  width:380px;
+  height:300px;
+}
+.intro_heading{
+font-size:3.2rem;
+text-align: left;
+line-height: 40px;
+margin-bottom: 30px;
+}
+.intro_text{
+ font-size: 1rem;
+ text-align: left;
+}
+
+.rate_gridbox{
+  grid-area: revi;
+  width:500px;
+  grid-gap: 25px;
+  padding: 40px 0;
+  height: 250px
+}
+.ratebox{
+  display: flex;
+  flex-direction: row;
+  height:fit-content;
+  padding: 15px 30px;
+ width:380px;
+}
+.ratebox:nth-child(2){
+margin-left: 40px;
+}
+.ratebox:nth-child(3){
+  margin-left: 80px;
+  }
+
+.star{
+margin-left: 10px;
+}
+.ratecom{
+margin-left: 20px;
+}
+
+.review_gridbox{
+  grid-area: rate;
+  grid-template-columns: 250px 250px 250px;
+  grid-gap: 110px;
+  margin-left: 20px;
+}
+.reviewbox{
+padding:30px 20px;
+height:150px;
+width:300px;
+}
+.profpic{
+width: 40px;
+height:40px;
+}
+
+.reviewbox:nth-child(2){
+  margin-top: 10px;
+}
+.reviewbox:nth-child(3){
+  margin-top: 20px;
+}
+
+
+
+}
